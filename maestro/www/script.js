@@ -79,8 +79,32 @@ function renderClubTA(data) {
 
 function renderTeamISI(data) {
   const container = document.getElementById("TeamISI");
-  // Personalizar por el equipo correspondiente
-  container.innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>`;
+  
+  container.innerHTML =
+  `
+    <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; display: flex; justify-content: center; padding: 20px; background-color: #f4f4f9;">
+        <div class="tableContainer" style="width: 60%; margin: 0 auto;">
+            <table style="width: 100%; border-collapse: collapse; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);">
+                <thead>
+                    <tr>
+                        <th style="background-color: #6f42c1; color: white; padding: 12px; font-size: 1.3em; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; border-bottom: 3px solid black; border-right: 1px solid black;">Relay</th>
+                        <th style="background-color: #6f42c1; color: white; padding: 12px; font-size: 1.3em; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; border-bottom: 3px solid black; border-right: 1px solid black;">Ángulo brazo</th>
+                        <th style="background-color: #6f42c1; color: white; padding: 12px; font-size: 1.3em; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; border-bottom: 3px solid black; border-right: 1px solid black;">Posición panel eje X</th>
+                        <th style="background-color: #6f42c1; color: white; padding: 12px; font-size: 1.3em; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; border-bottom: 3px solid black;">Posición panel eje Y</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="background-color: #fafafa; color: #333; padding: 12px; text-align: center; font-size: 1.1em; border-bottom: 1px solid black; border-right: 1px solid black;">${data.relay}</td>
+                        <td style="background-color: #fafafa; color: #333; padding: 12px; text-align: center; font-size: 1.1em; border-bottom: 1px solid black; border-right: 1px solid black;">${data.angulo_brazo}</td>
+                        <td style="background-color: #fafafa; color: #333; padding: 12px; text-align: center; font-size: 1.1em; border-bottom: 1px solid black; border-right: 1px solid black;">${data.pos_panel_x}</td>
+                        <td style="background-color: #fafafa; color: #333; padding: 12px; text-align: center; font-size: 1.1em; border-bottom: 1px solid black;">${data.pos_panel_y}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+  `;
 }
 
 function renderColapintos(data) {
